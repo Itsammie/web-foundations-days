@@ -1,0 +1,7 @@
+# Reflection
+
+**The most difficult concept.** The hardest idea for me was concurrency, in particular why two people can both "see" a free seat and both succeed in booking it. At first it seemed impossible because the code checks availability before saving. What helped was drawing the timeline of two requests side by side and seeing that the gap between "check" and "update" is where the bug lives. Learning to turn that gap into one atomic step (a conditional UPDATE), and then adding a UNIQUE constraint as a safety net, made it click. Working through the numbers also helped me see that most design choices come from estimates, not guesses.
+
+**What I would improve in my capstone.** Based on the feedback I received, I would improve my QuickNotes architecture by explaining my assumptions more clearly (for example, why I chose 20 reads and 2 writes per user per day) and by showing how the system behaves when a component fails, not only when everything works. I would also make my diagram simpler to read and spend more time explaining the trade-offs out loud, instead of just listing them.
+
+**What I will learn next.** I want to learn how to build a real backend: a Node.js or Python API connected to a PostgreSQL database, with authentication and tests. After that I want to practise deploying it to the cloud, then learn caching with Redis and message queues in practice, so I can build the ideas from this course instead of only drawing them.
